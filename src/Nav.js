@@ -22,7 +22,7 @@ function Nav() {
       />
       <img
         className="nav__avatar"
-        src="https://pbs.twimg.com/profile_images/1240119990411550720/hBEe3tdn_400x400.png" //https://zakirangwala.com/assets/img/main-bg.jpg
+        src="https://zakirangwala.com/assets/img/avatar.png" //https://pbs.twimg.com/profile_images/1240119990411550720/hBEe3tdn_400x400.png
         alt="Netflix Avatar"
       />
     </div>

@@ -11,7 +11,7 @@ function App() {
       {/* Banner */}
       <Banner></Banner>
       <Row
-        title="NETFLIX ORIGINALS"
+        title="Netflix Originals"
         fetchUrl={requests.fetchNetflixOriginals}
         isLargeRow={true}
       />

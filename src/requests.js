@@ -1,4 +1,4 @@
-const API_KEY = "c2bc7b70e5ee334022522791a2a64f9a";
+const API_KEY = "Enter API Key"; // https://developers.themoviedb.org/3
 const requests = {
   fetchTrending: `/trending/all/week?api_key=${API_KEY}&language=en-US`,
   fetchNetflixOriginals: `/discover/tv?api_key=${API_KEY}&with_networks=213`,

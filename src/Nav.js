@@ -20,7 +20,7 @@ function Nav() {
         src="https://upload.wikimedia.org/wikipedia/commons/0/0f/Logo_Netflix.png"
         alt="Netfix Logo"
       />
-      <img
+      <img onClick={() => window.open("https://zakirangwala.com")}
         className="nav__avatar"
         src="https://zakirangwala.com/assets/img/avatar.png" //https://pbs.twimg.com/profile_images/1240119990411550720/hBEe3tdn_400x400.png
         alt="Netflix Avatar"

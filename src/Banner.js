@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import axios from "./axios";
 import requests from "./requests";
 import "./Banner.css";
-import YouTube from "react-youtube";
 
 const base_url = "https://image.tmdb.org/t/p/original/";
 
@@ -27,22 +26,6 @@ function Banner() {
     return str?.length > n ? str.substr(0, n - 1) + "..." : str;
   }
 
-  const opts = {
-    height: "390",
-    width: "100%",
-    playerVars: {
-      autoplay: 1,
-    },
-  };
-
-  const handleClick = (movie) => {
-    if (trailerUrl) {
-      setTrailerUrl("");
-    } else {
-      
-      setTrailerUrl("lptctjAT-Mk")
-    }
-  };
   return (
     <header
       //background image
@@ -63,10 +46,8 @@ function Banner() {
         </h1>
         {/* div 2 buttons */}
         <div className="banner_buttons">
-          <button className="banner__button" onClick={() => handleClick(movie)}>
-            Play
-          </button>
-          <button className="banner__button" onClick={() => window.open("https://zakirangwala.com")}>My Website</button>
+          <button className="banner__button">Play</button>
+          <button className="banner__button">My List</button>
         </div>
         {/* description */}
         <h1 className="banner__description">
@@ -74,7 +55,6 @@ function Banner() {
         </h1>
       </div>
       <div className="banner--fadeBottom" />
-      {trailerUrl && <YouTube videoId={trailerUrl} opts={opts} />}
     </header>
   );
 }

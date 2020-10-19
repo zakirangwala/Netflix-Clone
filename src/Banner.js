@@ -7,7 +7,6 @@ const base_url = "https://image.tmdb.org/t/p/original/";
 
 function Banner() {
   const [movie, setMovie] = useState([]);
-  const [trailerUrl, setTrailerUrl] = useState("");
 
   useEffect(() => {
     async function fetchData() {

@@ -31,7 +31,7 @@ function Banner() {
       style={{
         backgroundSize: "cover",
         backgroundImage: `url(
-            "https://image.tmdb.org/t/p/original/${movie?.backdrop_path}"
+            "${base_url}${movie?.backdrop_path}"
             )`,
         backgroundPosition: "center center",
         opacity : 0.9,

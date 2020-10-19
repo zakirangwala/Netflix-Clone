@@ -1,5 +1,6 @@
 # Netflix Clone
 <img src = public/demo.gif>
+
 # Demo
 This project consists of a web app built using React JS, feel free to play around and try it out by : 
 - Cloning the repository

@@ -2,11 +2,13 @@ import React, { useEffect, useState } from "react";
 import axios from "./axios";
 import requests from "./requests";
 import "./Banner.css";
+import YouTube from "react-youtube";
 
 const base_url = "https://image.tmdb.org/t/p/original/";
 
 function Banner() {
   const [movie, setMovie] = useState([]);
+  const [trailerUrl, setTrailerUrl] = useState("");
 
   useEffect(() => {
     async function fetchData() {
@@ -24,6 +26,23 @@ function Banner() {
   function truncate(str, n) {
     return str?.length > n ? str.substr(0, n - 1) + "..." : str;
   }
+
+  const opts = {
+    height: "390",
+    width: "100%",
+    playerVars: {
+      autoplay: 1,
+    },
+  };
+
+  const handleClick = (movie) => {
+    if (trailerUrl) {
+      setTrailerUrl("");
+    } else {
+      
+      setTrailerUrl("lptctjAT-Mk")
+    }
+  };
   return (
     <header
       //background image
@@ -34,7 +53,7 @@ function Banner() {
             "${base_url}${movie?.backdrop_path}"
             )`,
         backgroundPosition: "center center",
-        opacity : 0.9,
+        opacity: 0.9,
       }}
     >
       <div className="banner__contents">
@@ -44,13 +63,18 @@ function Banner() {
         </h1>
         {/* div 2 buttons */}
         <div className="banner_buttons">
-          <button className="banner__button">Play</button>
-          <button className="banner__button">My List</button>
+          <button className="banner__button" onClick={() => handleClick(movie)}>
+            Play
+          </button>
+          <button className="banner__button" onClick={() => window.open("https://zakirangwala.com")}>My Website</button>
         </div>
         {/* description */}
-        <h1 className="banner__description">{truncate(movie?.overview,150)}</h1>
+        <h1 className="banner__description">
+          {truncate(movie?.overview, 150)}
+        </h1>
       </div>
       <div className="banner--fadeBottom" />
+      {trailerUrl && <YouTube videoId={trailerUrl} opts={opts} />}
     </header>
   );
 }

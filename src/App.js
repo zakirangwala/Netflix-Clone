@@ -13,17 +13,20 @@ function App() {
       {/* Banner */}
       <Banner></Banner>
       <Row
-        title="Netflix Originals"
-        fetchUrl={requests.fetchNetflixOriginals}
+        title="Trending Now"
+        fetchUrl={requests.fetchTrending}
         isLargeRow={true}
       />
-      <Row title="Trending Now" fetchUrl={requests.fetchTrending} />
-      <Row title="Indian Movies" fetchUrl={requests.fetchIndianMovies} />
-      <Row title="Top Rated" fetchUrl={requests.fetchTopRated} />
-      <Row title="Documentaries" fetchUrl={requests.fetchDocumentaries} />
+      <Row
+        title="Netflix Originals"
+        fetchUrl={requests.fetchNetflixOriginals}
+      />
       <Row title="Action Movies" fetchUrl={requests.fetchActionMovies} />
+      <Row title="Top Rated" fetchUrl={requests.fetchTopRated} />
       <Row title="Horror Movies" fetchUrl={requests.fetchHorrorMovies} />
+      <Row title="Indian Movies" fetchUrl={requests.fetchIndianMovies} />
       <Row title="Romance Movies" fetchUrl={requests.fetchRomanceMovies} />
+      <Row title="Documentaries" fetchUrl={requests.fetchDocumentaries} />
     </div>
   );
 }

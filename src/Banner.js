@@ -10,7 +10,17 @@ function Banner() {
 
   useEffect(() => {
     async function fetchData() {
-      const request = await axios.get(requests.fetchNetflixOriginals);
+      const movie_list = {
+        Trending: requests.fetchTrending,
+        NetflixOriginals: requests.fetchNetflixOriginals,
+        TopRated: requests.fetchTopRated,
+        HorrorMovies: requests.fetchHorrorMovies,
+        Documentaries: requests.fetchDocumentaries,
+        RomanceMovies: requests.fetchRomanceMovies,
+      };
+      const request = await axios.get(
+        movie_list[Object.keys(movie_list)[Math.floor(Math.random() * 6)]]
+      );
       setMovie(
         request.data.results[
           Math.floor(Math.random() * request.data.results.length - 1)
